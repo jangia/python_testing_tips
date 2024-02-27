@@ -27,8 +27,12 @@ def test_password_must_have_at_least_one_special_character():
 
 def test_password_must_have_at_least_one_number():
     with pytest.raises(ValueError):
-        User(id=uuid4(), name="John Doe", email="john@doe.com", password="SecretSecret!")
+        User(
+            id=uuid4(), name="John Doe", email="john@doe.com", password="SecretSecret!"
+        )
 
 
 def test_user_created_with_valid_password():
-    assert User(id=uuid4(), name="John Doe", email="john@doe.com", password="Secret123!").hashed_password
+    assert User(
+        id=uuid4(), name="John Doe", email="john@doe.com", password="Secret123!"
+    ).hashed_password

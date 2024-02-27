@@ -13,6 +13,8 @@ app = FastAPI()
 def user_details(user_id: int):
     user = next((user for user in USERS if user["user_id"] == user_id), None)
     if user is None:
-        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="User not found")
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND, detail="User not found"
+        )
 
     return user

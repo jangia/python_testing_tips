@@ -23,7 +23,9 @@ class User(BaseModel):
             raise ValueError("password must have at least one lowercase letter")
 
         if not any(char in "!@#$%^&*()" for char in value):
-            raise ValueError("password must have at least one special character: !@#$%^&*()")
+            raise ValueError(
+                "password must have at least one special character: !@#$%^&*()"
+            )
 
         if not any(char.isdigit() for char in value):
             raise ValueError("password must have at least one number")
