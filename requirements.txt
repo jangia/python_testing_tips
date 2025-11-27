@@ -1,0 +1,7 @@
+pytest
+ruff
+fastapi[all]
+pydantic[email]
+bcrypt
+requests
+freezegun
